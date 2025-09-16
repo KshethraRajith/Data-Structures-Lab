@@ -1,0 +1,47 @@
+// Program to convert sparse matrix into triplet representation
+#include <stdio.h>
+
+int main() {
+    int i, j, k = 1, row, col;
+    int spr[10][10], tc[20][3];
+
+    printf("Enter the number of rows and columns in the sparse matrix: ");
+    scanf("%d %d", &row, &col);
+
+    printf("Enter the elements of the sparse matrix:\n");
+    for (i = 0; i < row; i++) {
+        for (j = 0; j < col; j++) {
+            scanf("%d", &spr[i][j]);
+        }
+    }
+
+    printf("\nSPARSE MATRIX:\n");
+    for (i = 0; i < row; i++) {
+        for (j = 0; j < col; j++) {
+            printf("%d\t", spr[i][j]);
+        }
+        printf("\n");
+    }
+    for (i = 0; i < row; i++) {
+        for (j = 0; j < col; j++) {
+            if (spr[i][j] != 0) {
+                tc[k][0] = i;
+                tc[k][1] = j;
+                tc[k][2] = spr[i][j];
+                k++;
+            }
+        }
+    }
+
+    tc[0][0] = row;
+    tc[0][1] = col;
+    tc[0][2] = k - 1;
+
+    printf("\nTRIPLET REPRESENTATION\n");
+    printf("ROW\tCOLUMN\tVALUE\n");
+    for (i = 0; i < k; i++) {
+        printf("%d\t%d\t%d\n", tc[i][0], tc[i][1], tc[i][2]);
+    }
+
+    return 0;
+}
