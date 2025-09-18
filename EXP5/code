@@ -2,7 +2,6 @@
 #include <stdio.h>
 #define N 5
 int top=-1, stack[N];
-
 void push(void)
 {
     int item, i;
