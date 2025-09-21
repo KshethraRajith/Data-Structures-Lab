@@ -1,5 +1,5 @@
+//Program to implement linear search
 #include <stdio.h>
-
 int main() {
     int n, i, num, arr[10], c = 0, pos = -1;
     int t = 0; // Time counter
