@@ -1,6 +1,5 @@
 //program to implement binary search
 #include<stdio.h>
-
 int main()
 {
     int num, n, i, l, r, mid, a[100], c = 0, t = 1, s;
